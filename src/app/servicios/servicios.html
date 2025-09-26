@@ -1,0 +1,17 @@
+<div class="espacio-vacio">
+
+</div>
+<table>
+  <tr>
+    <th>ID</th>
+    <th>Servicio</th>
+    <th>Categoria</th>
+
+  </tr>
+  <tr *ngFor="let servicio of servicios">
+    <td>{{servicio.id_servicio}}</td>
+    <td>{{servicio.nombre}}</td>
+    <td>{{servicio.categoria}}</td>
+  
+  </tr>
+</table>

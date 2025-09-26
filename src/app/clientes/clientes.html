@@ -1,0 +1,19 @@
+<div class="espacio-vacio">
+
+</div>
+<table>
+  <tr>
+    <th>Nombre</th>
+    <th>Fecha de Nacimiento</th>
+    <th>Tipo de piel</th>
+    <th>Tratamientos</th>
+    <th>Teléfono</th>
+  </tr>
+  <tr *ngFor="let cliente of clientes">
+    <td>{{cliente.nombre}}</td>
+    <td>{{cliente.fecha_nacimiento}}</td>
+    <td>{{cliente.piel_tipo}}</td>
+    <td>{{cliente.tratamientos}}</td>
+    <td>{{cliente.telefono}}</td>
+  </tr>
+</table>

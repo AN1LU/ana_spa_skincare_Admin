@@ -1,0 +1,39 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Instrument Sans', sans-serif;
+    background-color: #A0D9E0;
+}
+
+.nav-bar {
+    background-color: #A0D9E0 ;
+    padding: 15px 30px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.nav-list {
+    color: #A0D9E0;
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 100px;
+}
+
+a {
+    text-decoration: none;
+    color: rgb(57, 57, 57);
+    font-weight: 500;
+    font-size: 16px;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #ffffff;
+}
+img {
+    width: 80px;
+    height: auto;
+    padding: 5px;
+}

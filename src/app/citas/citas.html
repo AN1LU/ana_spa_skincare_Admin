@@ -1,0 +1,20 @@
+<div class="espacio-vacio">
+
+</div>
+<table>
+  <tr>
+    <th>ID</th>
+    <th>Cliente</th>
+    <th>Fecha</th>
+    <th>Hora</th>
+    <th>Servicio</th>
+  </tr>
+  <tr *ngFor="let cita of citas">
+    <td>{{cita.id}}</td>
+    <td>{{cita.clientes.nombre}}</td>
+    <td>{{cita.cita_fecha}}</td>
+    <td>{{cita.hora}}</td>
+    <td>{{cita.servicios.nombre}}</td>
+    
+  </tr>
+</table>
