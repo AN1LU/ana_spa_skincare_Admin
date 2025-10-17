@@ -1,17 +1,22 @@
 <div class="espacio-vacio">
 
+<app-add-service></app-add-service>
+
+
 </div>
 <table>
   <tr>
     <th>ID</th>
     <th>Servicio</th>
     <th>Categoria</th>
-
+    <th>Acciones</th>
   </tr>
   <tr *ngFor="let servicio of servicios">
     <td>{{servicio.id_servicio}}</td>
     <td>{{servicio.nombre}}</td>
     <td>{{servicio.categoria}}</td>
-  
+    <td>
+      <app-delete-service [idServicio]="servicio.id_servicio"></app-delete-service>
+    </td>
   </tr>
 </table>

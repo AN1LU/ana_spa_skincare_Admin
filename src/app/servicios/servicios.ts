@@ -1,11 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { Supabase } from '../supabase';
 import { CommonModule } from '@angular/common';
-
+import { AddService } from '../add-service/add-service';
+import { DeleteService } from '../delete-service/delete-service';
 @Component({
   selector: 'app-servicios',
   standalone: true,
-  imports: [CommonModule],
+  imports: [AddService, DeleteService, CommonModule],
   templateUrl: './servicios.html',
   styleUrl: './servicios.css'
 })

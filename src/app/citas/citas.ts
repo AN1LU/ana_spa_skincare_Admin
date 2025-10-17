@@ -26,7 +26,7 @@ export class Citas implements OnInit {
           servicios!inner(nombre),
           clientes!inner(nombre)
         `)
-        .order('cita_fecha', { ascending: true })
+        .order('cita_fecha', { ascending: false })
         .order('hora', {ascending: true});
 
       if (error) {

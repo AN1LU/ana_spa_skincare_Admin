@@ -1,0 +1,32 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<button (click)="abrirModal()">
+  <i class="fa fa-plus"></i> Agregar Servicio
+</button>
+
+<div class="modal" [class.show]="mostrarModal">
+  <div class="modal-content">
+    <span class="cerrar" (click)="cerrarModal()">&times;</span>
+    <h2>Agregar Servicio</h2>
+    
+    <form (ngSubmit)="agregarServicio()" #formServicio="ngForm">
+      <label>Nuevo servicio:</label>
+      <input type="text" name="nombre" [(ngModel)]="nuevoServicio.nombre" required> <br>
+
+      <label>Categoría:</label>
+      <div *ngIf="!otraCategoria">
+        <select name="categoria" [(ngModel)]="nuevoServicio.categoria" required>
+          <option *ngFor="let cat of categorias" [value]="cat">{{cat}}</option>
+        </select>
+        <button type="button" (click)="otraCategoria = true">Escribir categoria manualmente</button>
+      </div>
+
+      <div *ngIf="otraCategoria">
+        <input type="text" name="categoriaManual" [(ngModel)]="nuevoServicio.categoria" placeholder="Escribe nueva categoría" required>
+        <button type="button" (click)="otraCategoria = false">Cancelar</button>
+      </div>
+
+      <button type="submit">Guardar</button>
+    </form>
+  </div>
+</div>
