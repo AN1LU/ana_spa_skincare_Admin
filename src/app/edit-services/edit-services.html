@@ -1,1 +1,21 @@
-<p>edit-services works!</p>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<button class="btn-editar" (click)="abrirModal(servicio)">
+  <i class="fa fa-edit"></i>
+</button>
+
+<div class="modal" [class.show]="mostrarModal">
+  <div class="modal-content">
+    <span class="cerrar" (click)="cerrarModal()">&times;</span>
+    <h2>Editar Servicio</h2>
+
+    <form (ngSubmit)="guardarCambios()">
+      <label>Nombre:</label>
+      <input type="text" [(ngModel)]="nombre" name="nombre" required />
+
+      <label>Categoría:</label>
+      <input type="text" [(ngModel)]="categoria" name="categoria" required />
+
+      <button class="btn-save" type="submit">Guardar Cambios</button>
+    </form>
+  </div>
+</div>

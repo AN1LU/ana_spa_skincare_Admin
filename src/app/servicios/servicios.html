@@ -15,7 +15,9 @@
     <td>{{servicio.id_servicio}}</td>
     <td>{{servicio.nombre}}</td>
     <td>{{servicio.categoria}}</td>
+    
     <td>
+      <app-edit-services [servicio]="servicio" (actualizado)="cargarServicios()"></app-edit-services>&nbsp;
       <app-delete-service [idServicio]="servicio.id_servicio"></app-delete-service>
     </td>
   </tr>

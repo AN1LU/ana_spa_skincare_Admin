@@ -25,10 +25,11 @@ export class DeleteService {
 
     if (error) {
       console.error('❌ Error eliminando servicio:', error);
-      alert('Error eliminando servicio');
+      alert('❌ Error eliminando servicio');
     } else {
-      alert('Servicio eliminado correctamente');
+      alert('✅ Servicio eliminado correctamente');
       // Opcional: emitir un evento para actualizar la lista en el padre
     }
+    window.location.reload();
   }
 }

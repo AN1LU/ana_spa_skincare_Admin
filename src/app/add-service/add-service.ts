@@ -56,12 +56,15 @@ export class AddService {
 
     if (error) {
       console.error('Error agregando servicio:', error);
+      alert('❌ Error al agregar el servicio. Inténtalo de nuevo.');
     } else {
       console.log('Servicio agregado:', data);
+      alert('✅ Servicio agregado exitosamente.');
       this.cargarCategorias(); // actualizar categorías si se agregó una nueva
     }
 
     this.cerrarModal();
     this.nuevoServicio = { nombre: '', categoria: '' };
+    window.location.reload();
   }
 }

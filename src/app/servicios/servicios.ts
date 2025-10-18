@@ -3,26 +3,31 @@ import { Supabase } from '../supabase';
 import { CommonModule } from '@angular/common';
 import { AddService } from '../add-service/add-service';
 import { DeleteService } from '../delete-service/delete-service';
+import { EditServices } from '../edit-services/edit-services';
+
 @Component({
   selector: 'app-servicios',
   standalone: true,
-  imports: [AddService, DeleteService, CommonModule],
+  imports: [AddService, DeleteService, EditServices, CommonModule],
   templateUrl: './servicios.html',
-  styleUrl: './servicios.css'
+  styleUrls: ['./servicios.css']
 })
-
 export class Servicios implements OnInit {
   servicios: any[] = [];
 
   constructor(private Supabase: Supabase) {}
 
-  async ngOnInit() {
+  ngOnInit() {
+    this.cargarServicios();
+  }
+
+  // ✅ Función reutilizable para traer los servicios desde Supabase
+  async cargarServicios() {
     try {
-      // Trae todos los servicios
       const { data, error } = await this.Supabase.client
         .from('servicios')
         .select('*')
-        .order('id_servicio', { ascending: true }); // opcional, ordena por id
+        .order('id_servicio', { ascending: true });
 
       if (error) {
         console.error('❌ Error cargando servicios:', error);

@@ -57,6 +57,7 @@ tr:hover td {
 
   td {
     padding: 10px;
+    justify-items: center;
     text-align: right;
     position: relative;
   }

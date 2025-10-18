@@ -1,0 +1,87 @@
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<div class="agregarCliente">
+  <!-- Botón para abrir el modal -->
+  <button (click)="abrirModal()">
+    <i class="fa fa-plus"></i>
+    <i class="fa fa-user"></i>
+  </button>
+
+</div>
+
+<!-- Modal -->
+<div class="modal" [class.show]="mostrarModal">
+  <div class="modal-content">
+    <span class="cerrar" (click)="cerrarModal()">&times;</span>
+    <h2>Agregar Cliente</h2>
+
+    <form (ngSubmit)="agregarCliente()" #formCliente="ngForm">
+
+      <!-- Datos del Cliente -->
+      <label>Nombre:</label>
+      <input type="text" name="nombre" [(ngModel)]="nuevoCliente.nombre" required />
+
+      <label>Teléfono:</label>
+      <input type="text" name="telefono" [(ngModel)]="nuevoCliente.telefono" />
+
+      <label>Email:</label>
+      <input type="email" name="email" [(ngModel)]="nuevoCliente.email" />
+
+      <label>Fecha de Nacimiento:</label>
+      <input type="date" name="fecha_nacimiento" [(ngModel)]="nuevoCliente.fecha_nacimiento" />
+
+      <label>Tipo de piel:</label>
+      <select name="piel_tipo" [(ngModel)]="nuevoCliente.piel_tipo">
+        <option value="" disabled selected>Selecciona tipo de piel</option>
+        <option value="Seca">Seca</option>
+        <option value="Grasa">Grasa</option>
+        <option value="Mixta">Mixta</option>
+        <option value="Normal">Normal</option>
+        <option value="Sensible">Sensible</option>
+      </select>
+
+      <label>Actividad física:</label>
+      <select name="actividad_fisica" [(ngModel)]="nuevoCliente.actividad_fisica">
+        <option value="" disabled selected>Selecciona nivel de actividad</option>
+        <option value="Baja">Baja</option>
+        <option value="Media">Media</option>
+        <option value="Alta">Alta</option>
+      </select>
+
+      <label>Interacción:</label>
+      <select name="interaccion" [(ngModel)]="nuevoCliente.interaccion">
+        <option value="" disabled selected>Selecciona tipo de interacción</option>
+        <option value="Instagram">Instagram</option>
+        <option value="Facebook">Facebook</option>
+        <option value="Pagina web">Pagina web</option>
+        <option value="Google maps">Google Maps</option>
+        <option value="Recomendacion de un amigo">Recomendacion de un amigo</option>
+        <option value="Otro">Otro</option>
+      </select>
+
+      <hr />
+
+      <!-- Datos de la Cita -->
+      <h2>Asociar Cita</h2>
+
+      <label>Fecha de la cita:</label>
+      <input type="date" name="cita_fecha" [(ngModel)]="nuevaCita.cita_fecha" />
+
+      <label>Hora:</label>
+      <input type="time" name="hora" [(ngModel)]="nuevaCita.hora" />
+
+      <label>Mensaje:</label>
+      <input type="text" name="mensaje" [(ngModel)]="nuevaCita.mensaje" />
+
+      <label>Servicio:</label>
+      <select name="id_serviciocita" [(ngModel)]="nuevaCita.id_serviciocita">
+        <option value="" disabled selected>Selecciona un servicio</option>
+        <option *ngFor="let s of servicios" [value]="s.id_servicio">{{s.nombre}}</option>
+      </select>
+
+      <button type="submit">Guardar Cliente y Cita</button>
+    </form>
+  </div>
+</div>
