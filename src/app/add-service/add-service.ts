@@ -47,24 +47,35 @@ export class AddService {
     this.otraCategoria = false;
   }
 
+
   async agregarServicio() {
-    if (!this.nuevoServicio.nombre || !this.nuevoServicio.categoria) return;
+    console.log('agregarServicio invoked', this.nuevoServicio);
+    if (!this.nuevoServicio.nombre || !this.nuevoServicio.categoria){
+      alert('Por favor completa todos los campos requeridos.');
+      return; // evitar insertar datos incompletos
+    }
 
-    const { data, error } = await this.supabase.client
-      .from('servicios')
-      .insert([this.nuevoServicio]);
+    try {
+      const { data, error } = await this.supabase.client
+        .from('servicios')
+        .insert([this.nuevoServicio]);
 
-    if (error) {
-      console.error('Error agregando servicio:', error);
-      alert('❌ Error al agregar el servicio. Inténtalo de nuevo.');
-    } else {
-      console.log('Servicio agregado:', data);
-      alert('✅ Servicio agregado exitosamente.');
-      this.cargarCategorias(); // actualizar categorías si se agregó una nueva
+      if (error) {
+        console.error('Error agregando servicio:', error);
+        alert('❌ Error al agregar el servicio. Inténtalo de nuevo.');
+      } else {
+        console.log('Servicio agregado:', data);
+        alert('✅ Servicio agregado exitosamente.');
+        this.cargarCategorias(); // actualizar categorías si se agregó una nueva
+      }
+    } catch (err) {
+      console.error('Excepción agregando servicio:', err);
+      alert('❌ Error inesperado al agregar el servicio. Revisa la consola.');
     }
 
     this.cerrarModal();
     this.nuevoServicio = { nombre: '', categoria: '' };
+    // recarga rápida para reflejar cambios; si esto no funciona, revisa la consola
     window.location.reload();
   }
 }

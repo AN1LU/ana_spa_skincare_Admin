@@ -1,45 +1,31 @@
-button {
-  background-color: #a0d9e0;
-  border: none;
+.btn-editar {
+  background-color: #3498db;
   color: white;
+  border: none;
+  padding: 5px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.btn-editar:hover {
+  background-color: #206a9c;
+}
+
+.btn-save {
+  background-color: #8dcad1;
+  color: white;
+  border: none;
   padding: 10px 15px;
- 
-  margin-bottom: 4px;
   border-radius: 6px;
   cursor: pointer;
   font-family: 'Instrument Sans', sans-serif;
   transition: background 0.3s ease;
-}
-.boton-container {
-  display: flex;
-  justify-content: center; /* centra horizontalmente */
-  align-items: center;     /* centra verticalmente si hay altura definida */
-  margin-top: 2rem;
+  margin-top: 10px;
 }
 
-.btn-agregar-cita {
-  background-color: #f3fbfc; /* verde bonito */
-  color: white;
-  font-size: 1.2rem;          /* texto más grande */
-  padding: 15px 30px;         /* tamaño general del botón */
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-}
-
-.btn-agregar-cita:hover {
-  background-color: #608d92;  /* efecto al pasar el mouse */
-  transform: scale(1.05);
-}
-
-.btn-agregar-cita i {
-  font-size: 1.3rem; /* iconos un poco más grandes */
-}
-
-button:hover {
-  background-color: #8dcad1;
+.btn-save:hover {
+  background-color: #608d92;
 }
 
 .modal {
@@ -61,10 +47,9 @@ button:hover {
 .modal-content {
   background-color: #fff;
   margin: 10% auto;
-  padding: 20px ;
+  padding: 20px;
   border-radius: 10px;
   width: 500px;
-  margin-bottom: 10px;
   text-align: left;
   overflow-y: auto;
   font-family: 'Instrument Sans', sans-serif;
@@ -90,8 +75,7 @@ label {
   font-family: 'Instrument Sans', sans-serif;
 }
 
-input, select, 
-textarea {
+input, select, textarea {
   width: 475px;
   padding: 8px;
   margin-top: 4px;
@@ -100,7 +84,7 @@ textarea {
   font-family: inherit;
 }
 
-h2, h3{
+h2 {
   font-family: 'Instrument Sans', sans-serif;
   font-weight: 700;
   text-align: center;

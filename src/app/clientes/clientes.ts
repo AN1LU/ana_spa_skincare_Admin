@@ -2,10 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { Supabase } from '../supabase';
 import { CommonModule } from '@angular/common';
 import { AddClient } from '../add-client/add-client';
+import { DeleteClient } from '../delete-client/delete-client';
 @Component({
   selector: 'app-clientes',
   standalone: true,
-  imports: [CommonModule, AddClient],
+  imports: [CommonModule, AddClient, DeleteClient],
   templateUrl: './clientes.html',
   styleUrl: './clientes.css'
 })

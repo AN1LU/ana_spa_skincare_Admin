@@ -1,11 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { Supabase } from '../supabase';
 import { CommonModule } from '@angular/common';
-
+import { AddCita } from '../add-cita/add-cita';
+import { DeleteCita } from '../delete-cita/delete-cita';
+import { EditCita } from '../edit-cita/edit-cita';
 @Component({
   selector: 'app-citas',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, AddCita, DeleteCita, EditCita],
   templateUrl: './citas.html',
   styleUrls: ['./citas.css']
 })

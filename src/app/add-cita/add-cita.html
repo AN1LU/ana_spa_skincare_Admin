@@ -1,1 +1,58 @@
-<p>add-cita works!</p>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<div class="boton-container">
+    <!-- Botón para abrir el modal -->
+  <button class="btn-agregar-cita" (click)="abrirModal()">
+      <i class="fa fa-plus"></i> &nbsp;
+      <i class="fa fa-calendar-plus"></i>
+  </button>
+</div>
+
+
+<!-- Modal -->
+<div class="modal" [class.show]="mostrarModal">
+  <div class="modal-content">
+    <span class="cerrar" (click)="cerrarModal()">&times;</span>
+    <h2>Agregar Cita</h2>
+
+    <form (ngSubmit)="agregarCita()" #formCita="ngForm">
+
+      <!-- Fecha -->
+      <label>Fecha de la cita:</label>
+      <input type="date" name="cita_fecha" [(ngModel)]="nuevaCita.cita_fecha" required />
+
+      <!-- Hora -->
+      <label>Hora:</label>
+      <input type="time" name="hora" [(ngModel)]="nuevaCita.hora" required />
+
+      <!-- Cliente -->
+      <label>Cliente:</label>
+      <select name="id_cliente" [(ngModel)]="nuevaCita.id_cliente" required>
+        <option value="" disabled selected>Selecciona cliente</option>
+        <option *ngFor="let cliente of clientes" [value]="cliente.id">
+          {{ cliente.nombre }}
+        </option>
+      </select>
+
+      <!-- Servicio -->
+      <label>Servicio:</label>
+      <select name="id_serviciocita" [(ngModel)]="nuevaCita.id_serviciocita" required>
+        <option value="" disabled selected>Selecciona servicio</option>
+        <option *ngFor="let servicio of servicios" [value]="servicio.id_servicio">
+          {{ servicio.nombre }}
+        </option>
+      </select>
+
+      <!-- Mensaje -->
+      <label>Mensaje (opcional):</label>
+      <textarea
+        name="mensaje"
+        [(ngModel)]="nuevaCita.mensaje"
+        rows="3"
+        placeholder="Detalles o comentarios sobre la cita..."
+      ></textarea>
+
+      <button type="submit">Guardar</button>
+    </form>
+  </div>
+</div>

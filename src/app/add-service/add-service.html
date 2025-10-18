@@ -1,6 +1,6 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
-<button (click)="abrirModal()">
+<button class="btn-add-service"(click)="abrirModal()">
   <i class="fa fa-plus"></i>&nbsp;
   <i class="fa fa-hands-holding-circle"></i>
 </button>
@@ -16,18 +16,22 @@
 
       <label>Categoría:</label>
       <div *ngIf="!otraCategoria">
-        <select name="categoria" [(ngModel)]="nuevoServicio.categoria" required>
+        <select class="categoria-select" name="categoria" [(ngModel)]="nuevoServicio.categoria" required>
           <option *ngFor="let cat of categorias" [value]="cat">{{cat}}</option>
         </select>
-        <button type="button" (click)="otraCategoria = true">Escribir categoria manualmente</button>
+        <div class="boton-container">
+        <button class="btn" type="button" (click)="otraCategoria = true">Escribir categoria manualmente</button>
+        </div>
       </div>
 
       <div *ngIf="otraCategoria">
         <input type="text" name="categoriaManual" [(ngModel)]="nuevoServicio.categoria" placeholder="Escribe nueva categoría" required>
-        <button type="button" (click)="otraCategoria = false">Cancelar</button>
-      </div>
-
-      <button type="submit">Guardar</button>
+        
+          <button class="btn" type="button" (click)="otraCategoria = false">Cancelar</button>
+        </div>
+        <div class="boton-container">
+          <button type="submit">Guardar</button>
+        </div>
     </form>
   </div>
 </div>

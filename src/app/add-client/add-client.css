@@ -1,3 +1,16 @@
+/* Centra el botón agregar cliente */
+.boton-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2rem;
+}
+
+.btn-agregarCliente {
+  margin: 0 auto;
+  float: none;
+  display: block;
+}
 button {
   background-color: #a0d9e0;
   border: none;
@@ -9,12 +22,33 @@ button {
   cursor: pointer;
   font-family: 'Instrument Sans', sans-serif;
   transition: background 0.3s ease;
+
 }
 
 button:hover {
   background-color: #8dcad1;
 }
 
+.btn-agregarCliente {
+  background-color: #8dcad1; /* verde bonito */
+  color: white;
+  font-size: 1.2rem;          /* texto más grande */
+  padding: 15px 30px;         /* tamaño general del botón */
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.btn-agregarCliente:hover {
+  background-color: #608d92;  /* efecto al pasar el mouse */
+  transform: scale(1.05);
+}
+
+.btn-agregarCliente i {
+  font-size: 1.3rem; /* iconos un poco más grandes */
+}
 .modal {
   display: none;
   position: fixed;

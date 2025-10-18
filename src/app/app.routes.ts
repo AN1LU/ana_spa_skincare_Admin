@@ -4,7 +4,7 @@ import { Clientes } from './clientes/clientes';
 import { Servicios } from './servicios/servicios';
 import { Citas } from './citas/citas';
 import { AddService } from './add-service/add-service';
-
+import { Analitica } from './analitica/analitica';
 
 export const routes: Routes = [
     {
@@ -24,8 +24,8 @@ export const routes: Routes = [
         component: Citas
    }, 
    {
-     path: 'add_servicio',
-     component: AddService
+     path: 'analitica',
+     component: Analitica
    }
 
 ];

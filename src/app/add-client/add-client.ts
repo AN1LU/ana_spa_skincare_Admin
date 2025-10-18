@@ -100,9 +100,9 @@ mostrarModal = false;
         alert('✅ Cliente agregado exitosamente.');
       }
 
-      window.location.reload();
+      
     }
-
+    window.location.reload();
     this.cerrarModal();
   }
 }
