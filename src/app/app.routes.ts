@@ -1,5 +1,5 @@
 import { Routes } from '@angular/router';
-
+import { NgChartsConfiguration } from 'ng2-charts';
 import { Clientes } from './clientes/clientes';
 import { Servicios } from './servicios/servicios';
 import { Citas } from './citas/citas';

@@ -4,6 +4,7 @@ import { CommonModule } from '@angular/common';
 import { AddCita } from '../add-cita/add-cita';
 import { DeleteCita } from '../delete-cita/delete-cita';
 import { EditCita } from '../edit-cita/edit-cita';
+
 @Component({
   selector: 'app-citas',
   standalone: true,
@@ -29,7 +30,7 @@ export class Citas implements OnInit {
           clientes!inner(nombre)
         `)
         .order('cita_fecha', { ascending: false })
-        .order('hora', {ascending: true});
+        .order('hora', { ascending: true });
 
       if (error) {
         console.error('❌ Error cargando citas:', error);
@@ -41,4 +42,35 @@ export class Citas implements OnInit {
       console.error('💥 Error inesperado:', err);
     }
   }
+
+  descargarCSV() {
+    if (!this.citas.length) {
+      alert('No hay datos para descargar');
+      return;
+    }
+
+    const encabezados = ['ID', 'Cliente', 'Fecha', 'Hora', 'Servicio'];
+    const filas = this.citas.map(cita => [
+      cita.id,
+      cita.clientes?.nombre || '',
+      cita.cita_fecha || '',
+      cita.hora || '',
+      cita.servicios?.nombre || ''
+    ]);
+
+    const contenido = [encabezados, ...filas]
+      .map(e => e.map(v => `"${v}"`).join(','))
+      .join('\n');
+
+    const blob = new Blob([contenido], { type: 'text/csv;charset=utf-8;' });
+    const url = URL.createObjectURL(blob);
+
+    const link = document.createElement('a');
+    link.href = url;
+    link.setAttribute('download', 'citas.csv');
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  }
 }
+

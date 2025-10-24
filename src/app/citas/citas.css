@@ -1,6 +1,30 @@
 /* Contenedor */
 .espacio-vacio {
   margin: 20px 0;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  
+}
+
+.btn-csv {
+  background-color: #A0D9E0;
+  border: none;
+  height: 50px;
+  color: white;
+  font-family: 'Instrument Sans', sans-serif;
+  font-size: 15px;
+  padding: 10px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.15);
+}
+
+.btn-csv:hover {
+  background-color: #88c8cf;
 }
 
 /* Tabla base */

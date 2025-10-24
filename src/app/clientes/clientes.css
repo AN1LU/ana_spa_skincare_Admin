@@ -1,6 +1,29 @@
 /* Contenedor */
 .espacio-vacio {
   margin: 20px 0;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Botón CSV (mismo estilo que otros botones) */
+.boton-csv {
+  background-color: #A0D9E0;
+  color: white;
+  border: none;
+  height: 50px;
+  padding: 10px 20px;
+  font-family: 'Instrument Sans', sans-serif;
+  font-size: 14px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.boton-csv:hover {
+  background-color: #7bb8bf;
 }
 
 /* Tabla base */
@@ -23,7 +46,6 @@ th {
   text-align: left;
   padding: 12px 15px;
   font-weight: 200;
-
   letter-spacing: 0.5px;
 }
 
@@ -33,11 +55,9 @@ td {
   border-bottom: 1px solid #e0e0e0;
 }
 
-
 tr:nth-child(even) {
   background-color: #f9f9f9;
 }
-
 
 tr:hover td {
   background-color: #d7e3e4;

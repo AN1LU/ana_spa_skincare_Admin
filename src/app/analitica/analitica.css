@@ -1,0 +1,137 @@
+.chart-container {
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.loading {
+  text-align: center;
+  padding: 20px;
+  font-size: 1.2em;
+  color: #666;
+}
+
+.error {
+  text-align: center;
+  padding: 20px;
+  color: #dc3545;
+  background-color: #ffe6e6;
+  border-radius: 4px;
+  margin: 10px 0;
+}
+
+.analytics-content {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.total-citas {
+  text-align: center;
+  font-family: 'Instrument Sans', sans-serif;
+  padding: 20px;
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.total-citas h2 {
+  margin: 0;
+  font-family: 'Instrument Sans', sans-serif;
+  color: #333;
+  font-size: 1.5em;
+}
+
+.count {
+  font-size: 3em;
+  font-weight: bold;
+  color: #0066cc;
+  margin-top: 10px;
+}
+
+.chart {
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+canvas {
+  max-height: 400px;
+  width: 100% !important;
+  height: 100% !important;
+}
+
+.servicios-stats {
+  padding: 20px;
+  margin: 20px 0;
+}
+
+.stats-container {
+  display: flex;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.cards-section {
+  flex: 1;
+  min-width: 300px;
+}
+
+.chart-section {
+  flex: 1;
+  min-width: 300px;
+  padding: 20px;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.servicios-stats h3 {
+  color: #15184b;
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 1.3em;
+  font-family: 'Instrument Sans', sans-serif;
+}
+
+.servicios-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 20px;
+  padding: 10px;
+}
+
+.servicio-card {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  text-align: center;
+  transition: transform 0.3s ease;
+  font-family: 'Instrument Sans', sans-serif;
+}
+
+.servicio-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+}
+
+.servicio-card h4 {
+  color: #4a154b;
+  margin: 0 0 10px 0;
+  font-size: 1.1em;
+}
+
+.servicio-card .count {
+  font-size: 2em;
+  font-weight: bold;
+  color: #446ead;
+  margin: 10px 0;
+}
+
+.servicio-card .percentage {
+  color: #666;
+  font-size: 0.9em;
+  margin: 5px 0 0 0;
+}

@@ -1,6 +1,12 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
 <div class="espacio-vacio">
-<app-add-cita></app-add-cita>
+  <app-add-cita></app-add-cita>
+  <button class="btn-csv" (click)="descargarCSV()">
+    <i class="fa-solid fa-download"></i>&nbsp;Reporte CSV
+  </button>
 </div>
+
 <table>
   <tr>
     <th>ID</th>
@@ -11,15 +17,14 @@
     <th>Acciones</th>
   </tr>
   <tr *ngFor="let cita of citas">
-    <td>{{cita.id}}</td>
-    <td>{{cita.clientes.nombre}}</td>
-    <td>{{cita.cita_fecha}}</td>
-    <td>{{cita.hora}}</td>
-    <td>{{cita.servicios.nombre}}</td>
+    <td>{{ cita.id }}</td>
+    <td>{{ cita.clientes.nombre }}</td>
+    <td>{{ cita.cita_fecha }}</td>
+    <td>{{ cita.hora }}</td>
+    <td>{{ cita.servicios.nombre }}</td>
     <td>
       <app-edit-cita [cita]="cita"></app-edit-cita>&nbsp;
       <app-delete-cita [idCita]="cita.id"></app-delete-cita>
     </td>
-    
   </tr>
 </table>

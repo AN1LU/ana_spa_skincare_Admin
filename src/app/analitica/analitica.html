@@ -1,2 +1,31 @@
-<p>Error 503</p>
-<p>Service Unavailable</p>
+<div class="espacio-vacio">
+</div>
+<div class="total-citas">
+  <h2>Total de Citas: {{totalCitas}}</h2>
+</div>
+<div class="servicios-stats">
+  <div class="stats-container">
+    <div class="cards-section">
+      <h3>Citas por Servicio:</h3>
+      <div class="servicios-grid">
+        <div class="servicio-card" *ngFor="let servicio of citasPorServicio | keyvalue">
+          <h4>{{servicio.key}}</h4>
+          <p class="count">{{servicio.value}}</p>
+          <p class="percentage">{{(servicio.value / totalCitas * 100).toFixed(1)}}%</p>
+        </div>
+      </div>
+    </div>
+    <div class="chart-section">
+      <canvas baseChart
+        [data]="pieChartData"
+        [options]="pieChartOptions"
+        [type]="'pie'">
+      </canvas>
+    </div>
+  </div>
+</div>
+
+
+<canvas #barChart baseChart [data]="barChartData" [options]="barChartOptions" chartType="bar"></canvas>
+
+

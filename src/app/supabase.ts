@@ -18,4 +18,18 @@ export class Supabase {
   get client(){
     return this.supabase;
   }
+
+  async getData() {
+    // Cambia 'tu_tabla' por el nombre real de tu tabla
+    const { data, error } = await this.supabase
+      .from('citas')
+      .select('*');
+
+    if (error) {
+      console.error('Error al obtener datos de Supabase:', error);
+      return [];
+    }
+
+    return data || [];
+  }
 }
