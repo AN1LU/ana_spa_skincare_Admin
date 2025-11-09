@@ -3,11 +3,12 @@ import { Supabase } from '../supabase';
 import { CommonModule } from '@angular/common';
 import { AddClient } from '../add-client/add-client';
 import { DeleteClient } from '../delete-client/delete-client';
+import { HeaderComponent } from '../header/header';
 
 @Component({
   selector: 'app-clientes',
   standalone: true,
-  imports: [CommonModule, AddClient, DeleteClient],
+  imports: [CommonModule, AddClient, DeleteClient, HeaderComponent],
   templateUrl: './clientes.html',
   styleUrls: ['./clientes.css']
 })

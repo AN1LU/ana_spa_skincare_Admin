@@ -4,11 +4,12 @@ import { CommonModule } from '@angular/common';
 import { AddCita } from '../add-cita/add-cita';
 import { DeleteCita } from '../delete-cita/delete-cita';
 import { EditCita } from '../edit-cita/edit-cita';
+import { HeaderComponent } from '../header/header';
 
 @Component({
   selector: 'app-citas',
   standalone: true,
-  imports: [CommonModule, AddCita, DeleteCita, EditCita],
+  imports: [CommonModule, AddCita, DeleteCita, EditCita, HeaderComponent],
   templateUrl: './citas.html',
   styleUrls: ['./citas.css']
 })

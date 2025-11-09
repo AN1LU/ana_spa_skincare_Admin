@@ -3,11 +3,11 @@ import { ChartData, ChartOptions } from 'chart.js';
 import { CommonModule } from '@angular/common';
 import { NgChartsModule } from 'ng2-charts';
 import { Supabase } from '../supabase';
-
+import { HeaderComponent } from '../header/header';
 @Component({
   selector: 'app-analitica',
   standalone: true,
-  imports: [CommonModule, NgChartsModule],
+  imports: [CommonModule, NgChartsModule, HeaderComponent],
   templateUrl: './analitica.html',
   styleUrl: './analitica.css'
 })
@@ -17,7 +17,7 @@ export class Analitica implements OnInit {
   citasPorServicio: { [key: string]: number } = {};
   distribucionReservas: { [cantidad: number]: number } = {};
 
-  // 🎨 Colores para los gráficos
+  
   private springColors: string[] = [
     '#87CEEB', '#B0E0E6', '#ADD8E6', '#E0FFFF', '#AFEEEE',
     '#FFA07A', '#FFDAB9', '#e7c193ff', '#F08080', '#E9967A',
@@ -26,7 +26,7 @@ export class Analitica implements OnInit {
     '#98FB98', '#90EE90', '#8FBC8F', '#9DBB61', '#A8E4A0'
   ];
 
-  // 🥧 Pie Chart: Distribución de servicios
+  
   public pieChartData: ChartData<'pie'> = {
     labels: [],
     datasets: [{ data: [], backgroundColor: this.springColors }]
@@ -55,7 +55,7 @@ export class Analitica implements OnInit {
     }
   };
 
-  // 📊 Bar Chart: Distribución de reservas por cliente
+
   public barChartData: ChartData<'bar'> = {
     labels: [],
     datasets: [{
@@ -111,7 +111,7 @@ export class Analitica implements OnInit {
       this.citas = data ?? [];
       this.totalCitas = this.citas.length;
 
-      // 📊 Distribución de servicios (Pie Chart)
+      
       this.citasPorServicio = this.citas.reduce((acc, cita) => {
         const nombreServicio = cita.servicios.nombre;
         acc[nombreServicio] = (acc[nombreServicio] || 0) + 1;
@@ -126,7 +126,7 @@ export class Analitica implements OnInit {
         }]
       };
 
-      // 📈 Distribución de reservas por cliente (Bar Chart)
+     
       const citasPorCliente = this.citas.reduce((acc, cita) => {
         const cliente = cita.clientes.nombre;
         acc[cliente] = (acc[cliente] || 0) + 1;
@@ -149,7 +149,7 @@ export class Analitica implements OnInit {
         }]
       };
 
-      // 🔎 Logs de depuración
+     
       console.log('📌 Total de citas:', this.totalCitas);
       console.log('📌 Citas por servicio:', this.citasPorServicio);
       console.log('📊 Distribución de reservas:', this.distribucionReservas);

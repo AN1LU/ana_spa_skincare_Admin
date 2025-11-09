@@ -1,0 +1,27 @@
+.dashboard-container {
+  text-align: center;
+  margin-top: 50px;
+  font-family: 'Instrument Sans', sans-serif;
+}
+
+.dashboard-buttons {
+  margin-top: 30px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.btn {
+  padding: 12px 25px;
+  background-color: #A0D9E0;
+  color: white;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  background-color: #7ac3c9;
+}

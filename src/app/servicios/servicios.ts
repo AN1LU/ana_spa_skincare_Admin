@@ -4,11 +4,12 @@ import { CommonModule } from '@angular/common';
 import { AddService } from '../add-service/add-service';
 import { DeleteService } from '../delete-service/delete-service';
 import { EditServices } from '../edit-services/edit-services';
+import { HeaderComponent } from '../header/header';
 
 @Component({
   selector: 'app-servicios',
   standalone: true,
-  imports: [AddService, DeleteService, EditServices, CommonModule],
+  imports: [AddService, DeleteService, EditServices, CommonModule, HeaderComponent],
   templateUrl: './servicios.html',
   styleUrls: ['./servicios.css']
 })
